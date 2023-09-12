@@ -20,7 +20,7 @@ class PhotographyManager extends AbstractManager {
 
   findAll() {
     return this.database.query(
-      `SELECT p.id, p.name AS photo_name, p.tag, t.title FROM ${this.table} AS p JOIN type AS t ON t.id = p.type_id`
+      `SELECT p.id, p.name AS photo_name, p.tag, t.title FROM ${this.table} AS p JOIN type AS t ON t.id = p.type_id ORDER BY id`
     );
   }
 }
